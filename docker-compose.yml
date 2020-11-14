@@ -1,15 +1,15 @@
 version: '3.7'
 services:
   db:
-    container_name: YOURCONTAINERNAME
+    container_name: sqlserver2019_demo
     build:
       context: ./Docker/
       args:
-        - USERNAME=$USERNAME
-        - PASSWORD=$PASSWORD
         - SA_PASSWORD=$SA_PASSWORD
     environment:
       - SA_PASSWORD=${SA_PASSWORD}
       - ACCEPT_EULA=${ACCEPT_EULA}
+      - MSSQL_AGENT_ENABLED=${MSSQL_AGENT_ENABLED}
+      - MSSQL_PID=${MSSQL_PID}
     ports:
       - '1433:1433'
