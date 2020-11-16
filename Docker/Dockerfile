@@ -4,8 +4,6 @@ COPY AdventureWorks2017.bak /tmp
 COPY restore-database.sql /tmp
 COPY entrypoint.sh /tmp
 
-ARG SA_PASSWORD
-
 CMD exec /bin/bash /tmp/entrypoint.sh $SA_PASSWORD
 
 
