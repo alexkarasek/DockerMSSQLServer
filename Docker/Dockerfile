@@ -1,6 +1,7 @@
 FROM mcr.microsoft.com/mssql/server:2019-latest
 
-COPY AdventureWorks2017.bak /tmp
+COPY WideWorldImporters-Full.bak /tmp
+COPY WideWorldImportersDW-Full.bak /tmp
 COPY restore-database.sql /tmp
 COPY entrypoint.sh /tmp
 COPY init.sh /tmp
