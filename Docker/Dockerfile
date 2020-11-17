@@ -1,6 +1,5 @@
 FROM mcr.microsoft.com/mssql/server:2019-latest
 
-<<<<<<< HEAD
 # COPY WideWorldImporters-Full.bak /tmp
 # COPY WideWorldImportersDW-Full.bak /tmp
 COPY restore-database.sql /tmp
@@ -21,24 +20,21 @@ ADD https://github.com/Microsoft/sql-server-samples/releases/download/wide-world
 RUN chmod 775 -R /tmp
 
 USER mssql
-=======
+
 COPY AdventureWorks2017.bak /tmp
 COPY restore-database.sql /tmp
 COPY entrypoint.sh /tmp
 COPY init.sh /tmp
->>>>>>> dbb13a945f57bce816612f78ab01c591408e52f6
 
 ENV SA_PASSWORD=OcP2020123
 ENV ACCEPT_EULA=Y
 ENV MSSQL_AGENT_ENABLED=TRUE
 ENV MSSQL_PID=DEVELOPER
 
-<<<<<<< HEAD
 CMD exec /bin/bash /tmp/entrypoint.sh $SA_PASSWORD 
 # CMD exec /bin/bash /tmp/getfiles.sh  
-=======
+
 CMD exec /bin/bash /tmp/entrypoint.sh $SA_PASSWORD  
->>>>>>> dbb13a945f57bce816612f78ab01c591408e52f6
 
 
 
