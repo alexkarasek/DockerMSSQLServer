@@ -34,10 +34,12 @@ ENV MSSQL_PID=DEVELOPER
 CMD exec /bin/bash /tmp/entrypoint.sh $SA_PASSWORD 
 # CMD exec /bin/bash /tmp/getfiles.sh  
 
-CMD exec /bin/bash /tmp/entrypoint.sh $SA_PASSWORD  
+# docker build . -t alexk002/sqlserver2019_demo:1
 
-
+# docker run --name sqlserver -p 1433:1433 alexk002/sqlserver2019_demo:1
 
 # docker run --name sqlserver -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=OcP2020123' -e 'MSSQL_PID=Developer' -p 1433:1433 -d alexk002/sqlserver2019_demo:1
 
-# az container create -g dockercontainerRG --name sql2019demo --image alexk002/sqlserver2019_demo:1  --cpu 1 --memory 3.5 --ports 1433 --ip-address Public
+# docker push alexk002/sqlserver2019_demo:1
+
+# az container create -g dockercontainerRG --name sql2019demo --image alexk002/sqlserver2019_demo:1  --cpu 2 --memory 6 --ports 1433 --ip-address Public
