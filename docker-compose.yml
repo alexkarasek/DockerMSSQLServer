@@ -5,13 +5,10 @@ services:
     image: alexk002/sqlserver2019_demo:1
     build:
       context: ./Docker/
-      args:
-        - SA_PASSWORD=$SA_PASSWORD
     environment:
-      - SA_PASSWORD=${SA_PASSWORD}
-      - SA_Pwd=${SA_PASSWORD}
-      - ACCEPT_EULA=${ACCEPT_EULA}
-      - MSSQL_AGENT_ENABLED=${MSSQL_AGENT_ENABLED}
-      - MSSQL_PID=${MSSQL_PID}
+      - SA_PASSWORD=OcP2020123
+      - ACCEPT_EULA=Y
+      - MSSQL_AGENT_ENABLED=True
+      - MSSQL_PID=Developer
     ports:
       - '1433:1433'
