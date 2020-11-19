@@ -11,4 +11,6 @@ done
  
 echo "SQL UP!"
 
-/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $SA_PASSWORD -i /tmp/restore-database.sql
+/opt/mssql-tools/bin/sqlcmd -S localhost -l 60 -U sa -P $SA_PASSWORD -i /tmp/restore-database.sql
+
+

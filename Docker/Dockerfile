@@ -1,17 +1,17 @@
-FROM mcr.microsoft.com/mssql/server:2017-latest
+FROM mcr.microsoft.com/mssql/server:2019-latest
 
 COPY restore-database.sql /tmp
 COPY entrypoint.sh /tmp
 COPY init.sh /tmp
 
-# USER root
+USER root
 
 ADD https://github.com/Microsoft/sql-server-samples/releases/download/wide-world-importers-v1.0/WideWorldImportersDW-Full.bak /tmp/WideWorldImportersDW-Full.bak
 ADD https://github.com/Microsoft/sql-server-samples/releases/download/wide-world-importers-v1.0/WideWorldImporters-Full.bak /tmp/WideWorldImporters-Full.bak
 
 RUN chmod 775 -R /tmp
 
-# USER mssql
+USER mssql
 
 ENV SA_PASSWORD=OcP2020123
 ENV ACCEPT_EULA=Y
