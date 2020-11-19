@@ -1,2 +1,2 @@
 #start SQL Server, start the script to restore the DB
- sh /tmp/init.sh & /opt/mssql/bin/sqlservr
+ /opt/mssql/bin/sqlservr & sh /tmp/init.sh & tail -f /dev/null
