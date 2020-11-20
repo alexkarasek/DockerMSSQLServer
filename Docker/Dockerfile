@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/mssql/server:2019-latest
+FROM mcr.microsoft.com/mssql/server:latest
 
 COPY restore-database.sql /tmp
 COPY entrypoint.sh /tmp
